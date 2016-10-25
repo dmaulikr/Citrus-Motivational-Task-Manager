@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8166.2" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
+    <entity name="Category" representedClassName="Citrus.Category" syncable="YES">
+        <attribute name="hours" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="minutes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Task" inverseName="category" inverseEntity="Task" syncable="YES"/>
+    </entity>
+    <entity name="Day" representedClassName="Citrus.Day" syncable="YES">
+        <attribute name="completed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="pointsForDay" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="RewardsSystem" representedClassName="Citrus.RewardsSystem" syncable="YES">
+        <attribute name="goal" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="multiplier" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Streak" representedClassName="Citrus.Streak" syncable="YES">
+        <attribute name="beginDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="isGoodStreak" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="Citrus.Task" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="hasReminder" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hours" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isRepeatable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="minutes" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repeatCode" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="tasks" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Day" positionX="270" positionY="108" width="128" height="88"/>
+        <element name="RewardsSystem" positionX="-65" positionY="135" width="128" height="90"/>
+        <element name="Streak" positionX="88" positionY="261" width="128" height="90"/>
+        <element name="Task" positionX="108" positionY="-18" width="128" height="195"/>
+    </elements>
+</model>
